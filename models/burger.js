@@ -9,15 +9,13 @@ var burger = {
     },
 
     insert: (columns, values, callback) => {
-        orm.insertOne('burgers', columns, values, (response => {
-            callback(response);
-        }));
+        orm.insertOne('burgers', columns, values, callback)
     },
-    // updateOne: function(objColVals, condition, cb) {
-    //     orm.updateOne("burgers", objColVals, condition, function(res) {
-    //         cb(res);
-    //     });
-    // }
+    update: function(objColVals, condition, cb) {
+        orm.updateOne("burgers", objColVals, condition, function(res) {
+            cb(res);
+        });
+    }
 };
 
 // Export the database functions for the controller (catsController.js).

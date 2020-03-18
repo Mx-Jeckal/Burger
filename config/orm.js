@@ -42,6 +42,15 @@ var orm = {
             }
             cb(result);
         });
+    },
+
+    updateOne: (table, objectColumnValues, condition, callback) => {
+        // DECLARING QUERY FOR UPDATE SQL
+        var queryString = `UPDATE ${table} SET ${objectToSQL(objectColumnValues)} WHERE ${condition};`;
+        connection.query(queryString, (error, result) => {
+            if (error) throw (error);
+            callback(result);
+        });
     }
 
 }
