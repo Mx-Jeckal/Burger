@@ -1,0 +1,7 @@
+<li>
+    {{this.burger_name}}
+
+    {{#unless devoured}}<button class="change-devoured-state" data-id="{{this.id}}" data-devoured="{{this.devoured}}">
+        DEVOUR
+    </button>{{else}}{{/unless}}
+</li>
